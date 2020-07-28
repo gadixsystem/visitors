@@ -22,14 +22,5 @@
         "psr-4": {
             "gadixsystem\\visitors\\": "src/"
         }
-    },
-    "extra": {
-        "laravel": {
-            "providers": [
-                "gadixsystem\\visitors\\VisitorsServiceProvider.php"
-            ],
-            "aliases": {
-            }
-        }
     }
 }
