@@ -1,8 +1,8 @@
 {
-    "name": "gadixsystem/laravel-visitors",
+    "name": "gadixsystem/visitors",
     "description": "\"Simple Laravel Middleware to log vistors and block users\"",
     "keywords": ["middleware","security","laravel","visitors","ip","network","block","access"],
-    "homepage": "https://github.com/gadixsystem/laravel-visitors",
+    "homepage": "https://github.com/gadixsystem/visitors",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",
