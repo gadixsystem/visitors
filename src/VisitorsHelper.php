@@ -43,7 +43,7 @@ class VisitorsHelper
      */
     public static function getToday()
     {
-        $unique = Unique::where('created_at', Carbon::today())->count();
+        $unique = Unique::where('created_at','>=',Carbon::today())->count();
         return $unique;
     }
 
