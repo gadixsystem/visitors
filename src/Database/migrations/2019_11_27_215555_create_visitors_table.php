@@ -17,8 +17,8 @@ class CreateVisitorsTable extends Migration
             $table->bigIncrements('id');
             $table->integer("unique_id");
             $table->string("header");
-            $table->string("route");
-            $table->string("path");
+            $table->text("route");
+            $table->text("path");
             $table->string("method");
             $table->timestamps();
         });
