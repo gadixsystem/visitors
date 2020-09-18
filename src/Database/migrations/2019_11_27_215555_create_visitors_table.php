@@ -16,7 +16,7 @@ class CreateVisitorsTable extends Migration
         Schema::create('system_visitors', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer("unique_id");
-            $table->string("header");
+            $table->text("header");
             $table->text("route");
             $table->text("path");
             $table->string("method");
