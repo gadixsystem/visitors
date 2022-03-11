@@ -1,4 +1,3 @@
-
 <?php
 if (config('visitors.dashboard')) {
     Route::group(['namespace' => 'gadixsystem\visitors\Http\Controllers', 'middleware' => config('visitors.middleware'), 'prefix' => config('visitors.prefix')], function () {
