@@ -12,7 +12,6 @@ From your command line run:
 In config/app.php add the follow line:
 ```
  'providers' => [
-       
         //Visitors
         gadixsystem\visitors\VisitorsServiceProvider::class,
   ]
@@ -23,7 +22,7 @@ You need to make some migrations:
 From your command line type: 
 ```
 php artisan vendor:publish --provider="gadixsystem\visitors\VisitorsServiceProvider" --tag=migrations
-  ```
+```
   
   Now your migrations are in your database/migrations directory.
   
