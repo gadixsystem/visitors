@@ -36,7 +36,7 @@ class Visitors
 
         Visitor::create([
             "unique_id" => $unique->id,
-            "header" => $request->header('User-Agent') ?? 'No header',
+            "header" => $request->header('User-Agent') ?? 'Headerless',
             "route" => $request->fullUrl(),
             "path" => $request->path(),
             "method" => $request->method()
