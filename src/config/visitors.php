@@ -15,6 +15,10 @@ return [
      */
     'prefix' => 'visitors',
     /**
+     * Create a new entry in the visitors table on every request
+     */
+    'logActions' => false,
+    /**
      * Middleware
      * Here you can put your prefers middleware to visitors dashboard
      */

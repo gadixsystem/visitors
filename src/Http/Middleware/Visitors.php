@@ -19,12 +19,12 @@ class Visitors
     public function handle($request, Closure $next)
     {
         $ip = $request->getClientIp();
-        $unique = Unique::where('ip', $ip)->first();
+        $unique = Unique::where(Unique::IP, $ip)->first();
 
         if ($unique == null) {
             $unique = Unique::create([
-                'ip' => $ip,
-                'active' => true
+                Unique::IP => $ip,
+                Unique::ACTIVE => true
             ]);
         }
 
@@ -33,14 +33,15 @@ class Visitors
         }
 
         $unique->touch();
-
-        Visitor::create([
-            "unique_id" => $unique->id,
-            "header" => $request->header('User-Agent') ?? 'Headerless',
-            "route" => $request->fullUrl(),
-            "path" => $request->path(),
-            "method" => $request->method()
-        ]);
+        if (config('visitors.logActions')) {
+            Visitor::create([
+                Visitor::UNIQUE_ID => $unique->id,
+                Visitor::HEADER => $request->header('User-Agent'),
+                Visitor::ROUTE => $request->fullUrl(),
+                Visitor::PATH => $request->path(),
+                Visitor::METHOD => $request->method()
+            ]);
+        }
 
         return $next($request);
     }
