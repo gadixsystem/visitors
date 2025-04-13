@@ -14,7 +14,7 @@ class VisitorsHelper
      */
     public static function getActive()
     {
-        $unique = Unique::where('active', true)->count();
+        $unique = Unique::where(Unique::ACTIVE, true)->count();
         return $unique;
     }
     /**
@@ -23,7 +23,7 @@ class VisitorsHelper
      */
     public static function getBlocked()
     {
-        $unique = Unique::where('active', false)->count();
+        $unique = Unique::where(Unique::ACTIVE, false)->count();
         return $unique;
     }
 
@@ -58,42 +58,37 @@ class VisitorsHelper
             'created_at',
             '=',
             $currentMonth
-        )->distinct('unique_id')->count('unique_id');
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $current_1 = Visitor::whereMonth(
             'created_at',
             '=',
             $currentMonth - 1
-        )->distinct('unique_id')->count('unique_id');
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $current_2 = Visitor::whereMonth(
             'created_at',
             '=',
             $currentMonth - 2
-        )->distinct('unique_id')->count('unique_id');
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $current_3 = Visitor::whereMonth(
             'created_at',
             '=',
             $currentMonth - 3
-        )->distinct('unique_id')->count('unique_id');
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $current_4 = Visitor::whereMonth(
             'created_at',
             '=',
             $currentMonth - 4
-        )->distinct('unique_id')->count('unique_id');
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $current_5 = Visitor::whereMonth(
             'created_at',
             '=',
             $currentMonth - 5
-        )->distinct('unique_id')->count('unique_id');
-
-        $currentYear = Carbon::now()->year;
-
-        $currentYear = Carbon::now()->year;
-
+        )->distinct(Visitor::UNIQUE_ID)->count(Visitor::UNIQUE_ID);
 
         $labels = array();
 

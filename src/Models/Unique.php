@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Unique extends Model
 {
+    public const IP = 'ip';
+    public const ACTIVE = 'active';
+
     protected $fillable = [
-        'ip', 'active'
+        self::IP,
+        self::ACTIVE,
     ];
     public function visitors()
     {

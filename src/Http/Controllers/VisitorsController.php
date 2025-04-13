@@ -46,7 +46,7 @@ class VisitorsController extends Controller
 
         $q = $request->q;
         if ($q != "") {
-            $unique = Unique::where('ip', 'LIKE', '%' . $q . '%')
+            $unique = Unique::where(Unique::IP, 'LIKE', '%' . $q . '%')
                 ->paginate(5);
 
             if (count($unique) > 0) {
